@@ -22,9 +22,8 @@ class Solution:
                  w-m <= k, 
                  w: window size, m: most freqent charecter count in the window w.
 
-        so for every silding window, we caluclate m among 26 charecters, this is O(26)
-        we want to reduce that too.
-
+        so for every silding window, we caluclate m among 26 charecters, 
+        this is O(26) we want to reduce that too.
 
         The window right_ptr goes up every loop. The left ptr moves up when the 
         condition is not met. when right pointer up we increase the count of the 
@@ -35,16 +34,19 @@ class Solution:
         we have seen till now. 
         
         """
-        count={}#stores frequency of each letter in that window
-        res=0
-        l=0
-        maxf=0
-        for r in range(len(s)):
-            count[s[r]]=1 +count.get(s[r],0)
-            maxf=max(maxf,count[s[r]])#saves time
+        count = {}#stores frequency of each letter in that window
+        result = 0
+        left_ptr = 0
+        maxfreq_uptillnow = 0
 
-            while(r-l+1)-maxf > k:#saves time
-                count[s[l]]-=1
-                l+=1
-            res = max(res, r-l+1)
-        return res
+        for right_ptr in range(len(s)):
+            count[s[right_ptr]] = 1 + count.get(s[right_ptr],0)
+            maxfreq_uptillnow = max(maxfreq_uptillnow, count[s[right_ptr]])
+            #saves time
+
+            while(right_ptr - left_ptr + 1) - maxfreq_uptillnow > k: 
+                # while the window is not valid.
+                count[s[left_ptr]] -= 1
+                left_ptr += 1
+            result = max(result, right_ptr - left_ptr + 1)
+        return result
