@@ -20,7 +20,7 @@ class Solution:
                 row_exist = True
                 break # didn't consider writing break, if non of the conditions are 
                 # true we want to break the loop
-            print(row_exist)
+            # print(row_exist)
         if not row_exist:
             return False
         else:
