@@ -16,7 +16,7 @@ class Solution:
                 bottom = mid_row - 1
             else:
                 # target should be in this row 
-                target_row = mid_row
+                # target_row = mid_row # target row should be updated if this is 
                 row_exist = True
                 break # didn't consider writing break, if non of the conditions are 
                 # true we want to break the loop
