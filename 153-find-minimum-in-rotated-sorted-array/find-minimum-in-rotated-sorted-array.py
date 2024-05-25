@@ -11,7 +11,7 @@ class Solution:
         while left_ptr < right_ptr:
             mid_ptr = (left_ptr + right_ptr) // 2
             mid_val = nums[mid_ptr]
-            print(left_ptr, right_ptr, mid_ptr, left_val, right_val, mid_val)
+            # print(left_ptr, right_ptr, mid_ptr, left_val, right_val, mid_val)
             if mid_val >= left_val and left_val > right_val:
                 left_ptr = mid_ptr + 1
                 # mid_ptr is always in the list since
