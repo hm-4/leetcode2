@@ -7,7 +7,7 @@ class Solution:
         while left_ptr <= right_ptr:
             mid_ptr = (left_ptr + right_ptr) // 2
             mid_val = nums[mid_ptr]
-            print(left_ptr, right_ptr, mid_ptr)
+            # print(left_ptr, right_ptr, mid_ptr)
             if mid_val == target: return mid_ptr
             elif mid_val >= left_val:
                 if target >= left_val and target < mid_val:
