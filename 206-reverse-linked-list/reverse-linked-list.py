@@ -24,12 +24,30 @@ class Solution:
         #     head = m_ptr
         #     return head
 
-        prev, curr = None, head
 
-        while curr:
-            next = curr.next
-            curr.next = prev
-            prev = curr
-            curr = next
-        return prev
+        ####  ** Simpler solution **
+        # prev, curr = None, head
+
+        # while curr:
+        #     next = curr.next
+        #     curr.next = prev
+        #     prev = curr
+        #     curr = next
+        # return prev
+
+        #### ** Recursive solution **
+
+        if not head:
+            return None
+        new_head = None
+        if head.next:
+            new_head = self.reverseList(head.next)
+            head.next.next = head
+        else:
+            new_head = head
+        head.next = None
+        return new_head
+        
+
+
 
