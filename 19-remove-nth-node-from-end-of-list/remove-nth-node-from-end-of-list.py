@@ -8,7 +8,8 @@ class Solution:
         curr = head
         for i in range(n):
             if not curr.next:
-                #print("hello")
+                # print("hello") 
+                # this means we have to remove the first element.
                 head = head.next
                 return head
             curr = curr.next
