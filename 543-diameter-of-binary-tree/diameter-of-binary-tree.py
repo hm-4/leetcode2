@@ -26,13 +26,10 @@ class Solution:
         diameter = left_height + right_height + 2 (for two new edges)
 
         """
-        self.diameter = 0 
         # global variable to store the solution
         # so that dont need to return max diameter also in the 
         # every recurssion.
         # we can use nonlocal for global variable.
-
-        curr_root = root
-        self.dfs(curr_root)
+        self.dfs(root)
         return self.diameter
             
