@@ -8,7 +8,7 @@ class Solution:
     def __init__(self):
         self.count = 0
     def goodNodes(self, root: TreeNode) -> int:
-        self.dfs(root, float('-inf'))
+        self.dfs(root, -10001)
         return self.count
 
     def dfs(self, root, max_uptil_now):
